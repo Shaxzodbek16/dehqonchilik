@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dehqonchilik</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+      <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+</head>
+<body>
+  {% include 'navbar.html' %}
+  <main class="article">
+    {% for item in info %}
+
+    <article>
+      <img src="{{ item.image.url }}" alt="Article Image">
+      <div class="article-content">
+        <h2>{{item.title}}</h2>
+        <p class="description">{{item.description}}</p>
+        <p class="created-at">{{item.created_at}}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </main>
+  {% include 'footer.html' %}
+  <script src="{% static 'javascript/navbar.js' %}">
+  </script>
+</body>
+</html>
