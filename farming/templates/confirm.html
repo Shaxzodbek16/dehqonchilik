@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Xabar yuborildi!</title>
+    <link rel="shortcut icon" href="{% static 'images/logo/confirm.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/confirm.css' %}">
+</head>
+<body>
+<div class="confirm-container">
+    <div class="confirm-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+             class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+    </div>
+    <h2 class="confirm-title">Xabaringiz uchun tashakkur!</h2>
+    <p class="confirm-message">So'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz.</p>
+    <a href="{% url 'store' %}" class="confirm-button">Asosiy sahifaqa qaytish</a>
+</div>
+</body>
+</html>
+

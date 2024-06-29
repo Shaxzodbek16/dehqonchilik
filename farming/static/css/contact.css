@@ -1,0 +1,90 @@
+/* Umumiy stillar */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url('body-background.jpeg');
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 90vh;
+}
+.contact-container {
+
+    max-width: 500px;
+    margin: 100px auto 0 auto; /* Yuqoridan margin qo'shildi */
+    padding: 30px;
+    border-radius: 10px; /* Yumaloq burchaklar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soyalar */
+    background-color: #fff; /* Orqa fon rangi */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form guruhlari stillari */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease; /* Border animatsiyasi */
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #4CAF50; /* Fokuslanganda yashil rang */
+}
+
+/* Tugma stillari */
+button[type="submit"] {
+    background-color: #4CAF50; /* Yashil */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41; /* To'qroq yashil */
+}
+
+/* Responsive sozlamalar */
+@media (max-width: 768px) {
+    .contact-container {
+        max-width: 90%;
+    }
+}
+.submitting {
+    background-color: #28a745; /* Rang o'zgaradi */
+    transform: scale(1.05);   /* Hajmi kattalashadi */
+}
