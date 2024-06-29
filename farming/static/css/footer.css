@@ -170,6 +170,13 @@ footer {
     .footer-distributed .footer-center i {
         margin-left: 0;
     }
+    .footer-left h3{
+        font-size: 24px;
+    }
 }
 
-
+.location iframe{
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+}
