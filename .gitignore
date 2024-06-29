@@ -5,8 +5,12 @@ __pycache__/
 
 # C extensions
 *.so
-
-# Distribution / packaging
+venv
+venv/
+.idea
+.idea/
+db.sqlite3
+media/
 .Python
 build/
 develop-eggs/
