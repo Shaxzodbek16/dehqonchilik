@@ -68,9 +68,9 @@ WSGI_APPLICATION = 'farming.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('POSTGRES_DB', 'postgres'),
-        'USER': os.environ.get('POSTGRES_USER', 'postgres'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'postgres'),
+        'NAME': os.environ.get('POSTGRES_DB', 'postgres') or 'dehqonchilik',
+        'USER': os.environ.get('POSTGRES_USER', 'postgres') or 'shaxzodbek',
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'postgres') or 'shaxzodbek',
         'HOST': os.environ.get('POSTGRES_HOST', '127.0.0.1'),
         'PORT': '5432',
     }
