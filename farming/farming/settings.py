@@ -9,7 +9,7 @@ SECRET_KEY = 'django-insecure-8$h29d$a0f$ki$)21bvcjd2_3$$bnq@5-#0(#837f^db62#cr4
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["dehqonchilik.uz"]
 
 
 # Application definition
