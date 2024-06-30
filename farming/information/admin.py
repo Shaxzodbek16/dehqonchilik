@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Store, News
-from django.http import HttpResponseRedirect
+from .models import Product, Category, Store, News, Contact
 
 
 @admin.register(Product)
@@ -40,3 +39,11 @@ class NewsAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', 'created_at')
     search_fields = ('title', 'description', 'created_at')
     list_filter = ('title', 'description', 'created_at')
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    main = ("name", "text", "telephone", "purpose", "created_at")
+    list_display = main
+    search_fields = main
+    list_filter = main
