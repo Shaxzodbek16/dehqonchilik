@@ -38,4 +38,4 @@ def confirm(request):
 
 
 def _404(request):
-    return render(request, '404.html', status=404 or 500)
+    return render(request, '404.html', status=404)

@@ -66,16 +66,16 @@ nav li:first-child {
 
 @media (max-width: 800px) {
     .hideOnMobile {
-        display: none;
+        display: none !important;
     }
 
     .menu-button {
-        display: block;
+        display: block !important;
     }
 }
 
 @media (max-width: 400px) {
     .sidebar {
-        width: 100%;
+        width: 100% !important;
     }
 }

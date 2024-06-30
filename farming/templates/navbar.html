@@ -9,7 +9,7 @@
         <li><a href="{% url 'product'%}">Mahsulotlar</a></li>
         <li><a href="{% url 'store'%}">Sotuvdagi mahsulotlar</a></li>
         <li><a href="{% url 'contact'%}">Bog'lanish</a></li>
-        <li><a href="/dehqon/">Admin</a></li>
+        <li><a href="{% url 'admin:index' %}'">Admin</a></li>
     </ul>
     <ul>
         <li><a href="{% url 'news'%}">Dehqonchilik</a></li>
@@ -17,7 +17,7 @@
         <li class="hideOnMobile"><a href="{% url 'product'%}">Mahsulotlar</a></li>
         <li class="hideOnMobile"><a href="{% url 'store'%}">Sotuvdagi mahsulotlar</a></li>
         <li class="hideOnMobile"><a href="{% url 'contact'%}">Bog'lanish</a></li>
-        <li class="hideOnMobile"><a href="/dehqon/">Admin</a></li>
+        <li class="hideOnMobile"><a href="{% url 'admin:index' %}">Admin</a></li>
 
         <li class="menu-button" onclick=showSidebar()>
             <a href="#">
