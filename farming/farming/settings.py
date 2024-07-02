@@ -6,11 +6,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-8$h29d$a0f$ki$)21bvcjd2_3$$bnq@5-#0(#837f^db62#cr4'
 
+coding = True
 
-DEBUG = False
+if not coding:
+    DEBUG = False
 
-ALLOWED_HOSTS = ["dehqonchilik.uz"]
-
+    ALLOWED_HOSTS = ["dehqonchilik.uz"]
+else:
+    DEBUG = True
+    ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
