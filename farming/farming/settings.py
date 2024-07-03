@@ -4,10 +4,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = 'django-insecure-8$h29d$a0f$ki$)21bvcjd2_3$$bnq@5-#0(#837f^db62#cr4'
-
 coding = True
-
 if not coding:
     DEBUG = False
     ALLOWED_HOSTS = ["dehqonchilik.uz"]
@@ -30,6 +27,12 @@ else:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     DEBUG = True
     ALLOWED_HOSTS = ["*"]
+
+
+TELEGRAM_BOT_TOKEN = '7253374165:AAHE5kkAXwKAX3cyj6IbuxDrnsg1PH5Y7_U'
+SECRET_KEY = 'django-insecure-8$h29d$a0f$ki$)21bvcjd2_3$$bnq@5-#0(#837f^db62#cr4'
+TELEGRAM_CHAT_IDS = ('6521856185', '6610744633')
+ASGI_APPLICATION = 'farming.asgi.application'
 
 # Application definition
 
