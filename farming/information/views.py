@@ -7,23 +7,14 @@ import logging
 import telegram
 from django.conf import settings
 
-
-def news(request):
-    info = News.objects.all()
-    context = {'info': info}
-    return render(request, 'index.html', context=context)
-
-
-def store(request):
-    info = Store.objects.all()
-    context = {'info': info}
-    return render(request, 'store.html', context=context)
+news = News.objects.all()
+store = Store.objects.all()
+products = Product.objects.all()
+all_info = {"news": news, "store": store, "product": products}
 
 
-def product(request):
-    products = Product.objects.all()
-    context = {'products': products}
-    return render(request, 'product.html', context=context)
+def main_page(request):
+    return render(request, "index.html", context=all_info)
 
 
 def confirm(request):
@@ -32,9 +23,6 @@ def confirm(request):
 
 def _404(request):
     return render(request, '404.html', status=404)
-
-
-################## BOT ########################
 
 
 logger = logging.getLogger(__name__)
