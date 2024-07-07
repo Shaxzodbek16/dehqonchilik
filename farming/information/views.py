@@ -18,7 +18,25 @@ all_info = {"news": news, "store_items": store_items, "products": products, "opt
             "store_items_true": store_items_true}
 
 
-def main_page(request):
+def main_and_contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        telephone = request.POST.get('tel')
+        purpose = request.POST.get('purpose')
+        text = request.POST.get('text')
+        information = Contact(name=name, telephone=telephone, purpose=purpose, text=text)
+        message = f'Name: {name}\nTelephone: {telephone}\nPurpose: {purpose}\nMessage: {text}'
+        information.save()
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        for chat_id in settings.TELEGRAM_CHAT_IDS:
+            loop.run_in_executor(
+                None,
+                functools.partial(asyncio.run, send_telegram_message(message, chat_id))
+            )
+
+        return redirect('confirm')
+
     return render(request, "index.html", context=all_info)
 
 
@@ -42,22 +60,4 @@ async def send_telegram_message(message, chat_id):
 
 
 def contact(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        telephone = request.POST.get('telephone')
-        purpose = request.POST.get('purpose')
-        text = request.POST.get('xabar')
-        information = Contact(name=name, telephone=telephone, purpose=purpose, text=text)
-        message = f'Name: {name}\nTelephone: {telephone}\nPurpose: {purpose}\nMessage: {text}'
-        information.save()
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        for chat_id in settings.TELEGRAM_CHAT_IDS:
-            loop.run_in_executor(
-                None,
-                functools.partial(asyncio.run, send_telegram_message(message, chat_id))
-            )
-
-        return redirect('confirm')
-
-    return render(request, 'index.html')
+    pass
