@@ -15,6 +15,9 @@ if not coding:
     ]
     MEDIA_URL = '/media/'
     MEDIA_ROOT = "/var/www/media/"
+    name_db = 'dehqonchilik'
+    password_db = 'shaxzodbek'
+    user_db = 'shaxzodbek'
 else:
     STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -27,6 +30,9 @@ else:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     DEBUG = True
     ALLOWED_HOSTS = ["*"]
+    name_db = 'postgres'
+    password_db = 'postgres'
+    user_db = 'postgres'
 
 
 TELEGRAM_BOT_TOKEN = '7253374165:AAHE5kkAXwKAX3cyj6IbuxDrnsg1PH5Y7_U'
@@ -90,9 +96,9 @@ WSGI_APPLICATION = 'farming.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('POSTGRES_DB'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'NAME': name_db,
+        'USER': user_db,
+        'PASSWORD': password_db,
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
