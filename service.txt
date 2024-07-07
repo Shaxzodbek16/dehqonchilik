@@ -1,0 +1,21 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/root/dehqonchilik/farming
+ExecStart=/root/dehqonchilik/farming/venv/bin/gunicorn \
+        --access-logfile - \
+        --workers 4 --bind \
+        unix:/run/gunicorn.sock \
+        farming.wsgi:application
+
+Environment="POSTGRES_DB=dehqonchilik"
+Environment="POSTGRES_USER=shaxzodbek"
+Environment="POSTGRES_PASSWORD=shaxzodbek"
+
+[Install]
+WantedBy=multi-user.target
