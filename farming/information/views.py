@@ -36,8 +36,8 @@ def main_and_contact(request):
             )
 
         return redirect('confirm')
-
-    return render(request, "index.html", context=all_info)
+    else:
+        return render(request, "index.html", context=all_info)
 
 
 def confirm(request):

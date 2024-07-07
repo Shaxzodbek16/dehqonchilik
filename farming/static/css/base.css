@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
 
+.card-img-top {
+    height: 250px;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-clip: border-box;
+    background-repeat: no-repeat
+}
+
 .jumbotron {
 
     text-align: center;
@@ -46,7 +56,7 @@
 
 
 @media (max-width: 767px) {
-.jumbotron h1 span {
+    .jumbotron h1 span {
         font-size: 30px;
     }
 }

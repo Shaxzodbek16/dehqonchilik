@@ -125,10 +125,10 @@
 
 <div class="jumbotron text-center">
     <svg xmlns="http://www.w3.org/2000/svg">
-    <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
-        <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
-    </filter>
-</svg>
+        <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+            <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+        </filter>
+    </svg>
     <h1><span filter-content="S">Dehqonchilik</span></h1>
 </div>
 
@@ -181,7 +181,9 @@
         {% if store_item.is_active %}
         <div class="col-md-4">
             <div class="card">
-                <img src="{{ store_item.photo.url }}" class="card-img-top" alt="Image">
+                <div class="unique">
+                    <img src="{{ store_item.photo.url }}" class="card-img-top" alt="Image">
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ store_item.name }}</h5>
                     <p class="card-text">{{ store_item.description }}</p>
@@ -211,7 +213,8 @@
             <form class="ps-3 flex-column" method="post">
                 {% csrf_token %}
                 <div class="form-floating mb-3">
-                    <input type="text" required class="form-control" id="floatingInput" placeholder="Ismingiz..." name="name">
+                    <input type="text" required class="form-control" id="floatingInput" placeholder="Ismingiz..."
+                           name="name">
                     <label for="floatingInput">Ismingizni kiriting: </label>
                 </div>
 
@@ -223,14 +226,16 @@
                 </select>
 
                 <div class="form-floating mt-4">
-                    <input type="tel" required class="form-control" id="floatingTel" placeholder="Telefon raqamingiz..." name="tel">
+                    <input type="tel" required class="form-control" id="floatingTel" placeholder="Telefon raqamingiz..."
+                           name="tel">
                     <label for="floatingTel">Telefon raqamingiz:</label>
                 </div>
 
                 <div class="mb-3 mt-4">
                     <label for="exampleFormControlTextarea1" class="form-label">Nima xohlayotganizni yozing:</label>
                     <textarea class="form-control" required id="exampleFormControlTextarea1" rows="10"
-                              placeholder="Masalan: Qancha kerakligi, qachonga kerakligi, vaqti..." name="text"></textarea>
+                              placeholder="Masalan: Qancha kerakligi, qachonga kerakligi, vaqti..."
+                              name="text"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Yuborish</button>
             </form>

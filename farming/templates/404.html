@@ -33,17 +33,13 @@
         </div>
         <div class="box__ghost-shadow"></div>
     </div>
-
     <div class="box__description">
         <div class="box__description-container">
             <div class="box__description-title">Whoops!</div>
-            <div class="box__description-text">It seems like we couldn't find the page you were looking for</div>
+            <div class="box__description-text">Siz qidirayotgan sahifani topa olmadik!</div>
         </div>
-
-        <a href="https://codepen.io/diogo_ml_gomes/" target="_blank" class="box__button">Go back</a>
-
+        <a href="{% url'main' %}" target="_blank" class="box__button">Go back</a>
     </div>
-
 </div>
 <script src="{% static 'javascript/404.js' %}"></script>
 </body>
