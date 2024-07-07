@@ -211,29 +211,26 @@
             <form class="ps-3 flex-column" method="post">
                 {% csrf_token %}
                 <div class="form-floating mb-3">
-                    <input type="text" required class="form-control" id="floatingInput" placeholder="Ismingiz..."
-                           name="name">
+                    <input type="text" required class="form-control" id="floatingInput" placeholder="Ismingiz..." name="name">
                     <label for="floatingInput">Ismingizni kiriting: </label>
                 </div>
 
-                <select class="form-select mt-4" required name="purpose">
-                    <option selected>Tanlang</option>
+                <select class="form-select mt-4" required id="purpose" name="purpose">
+                    <option selected value="Tanlanmagan">Tanlang</option>
                     {% for option in options %}
                     <option value="{{ option.name }}">{{option.name}}</option>
                     {% endfor %}
                 </select>
 
                 <div class="form-floating mt-4">
-                    <input type="tel" required class="form-control" id="floatingTel" placeholder="Telefon raqamingiz..."
-                           name="telephone">
+                    <input type="tel" required class="form-control" id="floatingTel" placeholder="Telefon raqamingiz..." name="tel">
                     <label for="floatingTel">Telefon raqamingiz:</label>
                 </div>
 
                 <div class="mb-3 mt-4">
                     <label for="exampleFormControlTextarea1" class="form-label">Nima xohlayotganizni yozing:</label>
                     <textarea class="form-control" required id="exampleFormControlTextarea1" rows="10"
-                              placeholder="Masalan: Qancha kerakligi, qachonga kerakligi, vaqti..."
-                              name="message"></textarea>
+                              placeholder="Masalan: Qancha kerakligi, qachonga kerakligi, vaqti..." name="text"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Yuborish</button>
             </form>
