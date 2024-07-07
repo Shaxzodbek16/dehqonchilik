@@ -57,7 +57,3 @@ async def send_telegram_message(message, chat_id):
         await bot.send_message(chat_id=chat_id, text=message)
     except telegram.error.TelegramError as e:
         logger.error(f"Error sending Telegram message to {chat_id}: {e}")
-
-
-def contact(request):
-    pass
