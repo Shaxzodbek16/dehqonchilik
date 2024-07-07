@@ -3,8 +3,8 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 coding = False
+
 if not coding:
     DEBUG = False
     ALLOWED_HOSTS = ["dehqonchilik.uz"]
@@ -27,7 +27,6 @@ else:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     DEBUG = True
     ALLOWED_HOSTS = ["*"]
-
 
 TELEGRAM_BOT_TOKEN = '7253374165:AAHE5kkAXwKAX3cyj6IbuxDrnsg1PH5Y7_U'
 SECRET_KEY = 'django-insecure-8$h29d$a0f$ki$)21bvcjd2_3$$bnq@5-#0(#837f^db62#cr4'
@@ -79,7 +78,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'farming.wsgi.application'
 
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -93,11 +91,10 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_DB', 'postgres'),
         'USER': os.environ.get('POSTGRES_USER', 'postgres'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'postgres'),
-        'HOST': os.environ.get('POSTGRES_HOST', '127.0.0.1'),
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -114,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -122,7 +118,5 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
