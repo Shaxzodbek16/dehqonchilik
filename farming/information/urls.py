@@ -1,11 +1,8 @@
 from django.urls import path
-from .views import product, store, news, contact, confirm
+from .views import main_page, confirm
 
 
 urlpatterns = [
-    path('', news, name='news'),
-    path('product/', product, name='product'),
-    path('store/', store, name='store'),
-    path('contact/', contact, name='contact'),
+    path('', main_page, name='main'),
     path('confirm/', confirm, name='confirm'),
 ]
