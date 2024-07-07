@@ -14,7 +14,7 @@ class Product(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     photo = models.ImageField(upload_to='products/%Y/%m/%d/')
-    category = models.ManyToManyField(Category,)
+    category = models.ManyToManyField(Category, )
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -76,3 +76,12 @@ class Contact(models.Model):
         verbose_name = 'Contact'
         ordering = ['created_at']
         db_table = 'Contact'
+
+
+class Options(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name

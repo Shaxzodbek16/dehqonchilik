@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Store, Product, News, Contact
+from .models import Store, Product, News, Contact, Options
 import asyncio
 import functools
 import logging
@@ -8,9 +8,14 @@ import telegram
 from django.conf import settings
 
 news = News.objects.all()
-store = Store.objects.all()
+store_items = Store.objects.all()
 products = Product.objects.all()
-all_info = {"news": news, "store": store, "product": products}
+options = Options.objects.all()
+store_items_true = len(Store.objects.filter(is_active=True))
+if store_items_true == 0: store_items_true = True
+
+all_info = {"news": news, "store_items": store_items, "products": products, "options": options,
+            "store_items_true": store_items_true}
 
 
 def main_page(request):
@@ -41,8 +46,7 @@ def contact(request):
         name = request.POST.get('name')
         telephone = request.POST.get('telephone')
         purpose = request.POST.get('purpose')
-        text = request.POST.get('message')
-
+        text = request.POST.get('xabar')
         information = Contact(name=name, telephone=telephone, purpose=purpose, text=text)
         message = f'Name: {name}\nTelephone: {telephone}\nPurpose: {purpose}\nMessage: {text}'
         information.save()
@@ -56,4 +60,4 @@ def contact(request):
 
         return redirect('confirm')
 
-    return render(request, 'contact.html')
+    return render(request, 'index.html')
